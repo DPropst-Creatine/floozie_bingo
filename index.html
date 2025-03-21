@@ -7,28 +7,32 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <header>
+        <img src="logo.png" alt="Floozie on a Retreatie" class="logo">
+        <h1>Women's Retreat Bingo</h1>
+    </header>
 
-    <img src="logo.png" alt="Floozie on a Retreatie" class="logo"> <!-- Logo as Header -->
+    <main>
+        <div id="setup">
+            <label for="player-name">Enter Your Name:</label>
+            <input type="text" id="player-name" placeholder="Your Name">
+            
+            <label for="player-color">Pick Your Board Color:</label>
+            <input type="color" id="player-color" value="#ff4081">
 
-    <h1>Women's Retreat Bingo</h1>
+            <button id="start-button">Start Game</button>
+        </div>
 
-    <div id="setup">
-        <label for="player-name">Enter Your Name:</label>
-        <input type="text" id="player-name" placeholder="Your Name">
-        
-        <label for="player-color">Pick Your Board Color:</label>
-        <input type="color" id="player-color" value="#ff4081">
-
-        <button onclick="startGame()">Start Game</button>
-    </div>
-
-    <div id="game" style="display: none;">
-        <h2 id="greeting"></h2>
-        <button onclick="generateCard()">Generate New Card</button>
-        <button onclick="resetBoard()">Reset My Board</button>
-        <p id="winner-message"></p>
-        <div id="bingo-board"></div>
-    </div>
+        <div id="game" style="display: none;">
+            <h2 id="greeting"></h2>
+            <div class="controls">
+                <button id="new-card-button">Generate New Card</button>
+                <button id="reset-button">Reset My Board</button>
+            </div>
+            <p id="winner-message"></p>
+            <div id="bingo-board"></div>
+        </div>
+    </main>
 
     <script src="script.js"></script>
 </body>
