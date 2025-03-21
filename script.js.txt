@@ -1,4 +1,4 @@
-const phrases = [
+  const phrases = [
     "Someone shows up in pajamas",
     "Forgot their Bible, but has their phone",
     "“I needed this” (said 5+ times)",
@@ -38,20 +38,28 @@ const phrases = [
 
 let playerName = "";
 let playerColor = "#ff4081";
-let cells = [];
+let cells =;
 let bingoDeclared = false;
 
 // Start Game Setup
 function startGame() {
+    console.log("startGame called");
     playerName = document.getElementById("player-name").value || "Player";
+    console.log("Player name:", playerName);
     playerColor = document.getElementById("player-color").value;
+    console.log("Player color:", playerColor);
 
     document.documentElement.style.setProperty('--player-color', playerColor);
+    console.log("Color set");
     document.getElementById("setup").style.display = "none";
+    console.log("Setup hidden");
     document.getElementById("game").style.display = "block";
+    console.log("Game displayed");
     document.getElementById("greeting").innerText = `Hello, ${playerName}!`;
-    
+    console.log("Greeting set");
+
     generateCard();
+    console.log("generateCard called");
 }
 
 function shuffle(array) {
@@ -67,7 +75,7 @@ function generateCard() {
     let shuffledPhrases = shuffle([...phrases]).slice(0, 24);
     shuffledPhrases.splice(12, 0, "FREE"); // Center space
 
-    cells = [];
+    cells =;
 
     shuffledPhrases.forEach((phrase, index) => {
         let cell = document.createElement("div");
@@ -93,6 +101,7 @@ function resetBoard() {
     cells.forEach(cell => cell.classList.remove("checked"));
     document.getElementById("winner-message").innerText = "";
     bingoDeclared = false;
+    generateCard(); //regenerate the card.
 }
 
 // Check for Bingo
@@ -116,7 +125,7 @@ function checkBingo() {
         }
     }
 
-    if ([0, 6, 12, 18, 24].map(i => checked[i]).every(v => v) || 
+    if ([0, 6, 12, 18, 24].map(i => checked[i]).every(v => v) ||
         [4, 8, 12, 16, 20].map(i => checked[i]).every(v => v)) {
         announceWinner();
         return;
