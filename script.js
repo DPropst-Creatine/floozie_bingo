@@ -38,7 +38,7 @@
 
 let playerName = "";
 let playerColor = "#ff4081";
-let cells =;
+let cells = [];
 let bingoDeclared = false;
 
 // Start Game Setup
