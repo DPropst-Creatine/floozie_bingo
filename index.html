@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Floozie on a Retreatie Bingo</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <img src="logo.png" alt="Floozie on a Retreatie" class="logo"> <!-- Logo as Header -->
+
+    <h1>Women's Retreat Bingo</h1>
+
+    <div id="setup">
+        <label for="player-name">Enter Your Name:</label>
+        <input type="text" id="player-name" placeholder="Your Name">
+        
+        <label for="player-color">Pick Your Board Color:</label>
+        <input type="color" id="player-color" value="#ff4081">
+
+        <button onclick="startGame()">Start Game</button>
+    </div>
+
+    <div id="game" style="display: none;">
+        <h2 id="greeting"></h2>
+        <button onclick="generateCard()">Generate New Card</button>
+        <button onclick="resetBoard()">Reset My Board</button>
+        <p id="winner-message"></p>
+        <div id="bingo-board"></div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
